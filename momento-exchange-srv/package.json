@@ -1,0 +1,26 @@
+{
+  "name": "momento-exchange-srv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "npx ts-node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@fastify/type-provider-typebox": "^3.5.0",
+    "@gomomento/sdk": "^1.38.0",
+    "@sinclair/typebox": "^0.31.14",
+    "fastify": "^4.23.1",
+    "socket.io-client": "^4.7.2",
+    "ts-node": "^10.9.1",
+    "ws": "^8.14.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.5"
+  }
+}

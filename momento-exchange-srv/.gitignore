@@ -1,0 +1,4 @@
+**/*.js
+package-lock.json
+.env.sh
+node_modules
