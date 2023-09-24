@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "npx ts-node",
+    "rate": "npx ts-node rate_publisher.ts",
+    "api": "npx ts-node exchange_api.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
