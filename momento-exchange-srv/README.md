@@ -20,6 +20,11 @@ This process gets current BTCJPY price from [bitflyer lightning](https://lightni
 ```
 > npx ts-node rate_publisher.ts
 ```
+or
+
+```
+> npm run rate
+```
 
 ## 2. rate_subscriber (option)
 
@@ -35,4 +40,8 @@ This process is the backend of the frontend application. It provides two endpoin
 
 ```
 > npx ts-node exchange_api.ts
+```
+or
+```
+> npm run api
 ```
