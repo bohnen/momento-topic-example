@@ -1,6 +1,6 @@
-# Momento Topics BTCJPY Trading App Sample
+# Momento Topics BTCJPY Trading App Example
 
-This repository is a sample demonstration of using Momento Topics to deliver BTCJPY prices in real-time for a trading application.
+This repository is a demonstration of using Momento Topics to deliver BTCJPY prices in real-time for a trading application.
 
 ## Directory Structure
 

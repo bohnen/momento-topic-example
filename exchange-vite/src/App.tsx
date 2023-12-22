@@ -7,7 +7,7 @@ const defaultData: Execution[] = [];
 
 function App() {
   const [price, setPrice] = useState<{ bid: number; ask: number }>({ bid: 0, ask: 0 });
-  const [orderType, setOrderType] = useState<'buy' | 'sell'>('buy');
+  const [, setOrderType] = useState<'buy' | 'sell'>('buy');
   const [amount, setAmount] = useState<'1' | '0.1' | '0.01'>('0.01');
   const [data, setData] = useState(() => [...defaultData])
 

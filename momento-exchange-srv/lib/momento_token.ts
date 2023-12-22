@@ -3,12 +3,15 @@ import {
     CacheClient,
     CacheGet,
     CacheIncrement,
+    CacheSet,
     Configurations,
     CredentialProvider,
     GenerateDisposableToken,
     SubscribeCallOptions,
     TopicClient,
-    TopicConfigurations
+    TopicConfigurations,
+    TopicPublish,
+    TopicSubscribe
 } from "@gomomento/sdk";
 import {
     tokenExpiresIn,
@@ -92,7 +95,13 @@ export async function getCachedPrice() {
 }
 
 export function putCachedPrice(rate: Rate) {
-    cacheClient.set(cacheName, cacheKey,JSON.stringify(rate));
+    cacheClient.set(cacheName, cacheKey,JSON.stringify(rate)).then(
+        (response) => {
+            if (response instanceof CacheSet.Error) {
+                throw new Error(response.message());
+            }
+        }
+    );
 }
 
 /**
@@ -113,9 +122,21 @@ export async function getNewID() {
 // Topic
 
 export function publish(msg: Rate){
-    topicClient.publish(cacheName, cacheKey, JSON.stringify(msg));
+    topicClient.publish(cacheName, cacheKey, JSON.stringify(msg)).then(
+        (response) => {
+            if (response instanceof TopicPublish.Error) {
+                throw new Error(response.message());
+            }
+        }
+    );
 }
 
 export function subscribe(option: SubscribeCallOptions){
-    topicClient.subscribe(cacheName, cacheKey, option);
+    topicClient.subscribe(cacheName, cacheKey, option).then(
+        (response) => {
+            if (response instanceof TopicSubscribe.Error) {
+                throw new Error(response.message());
+            }
+        }
+    );
 }
